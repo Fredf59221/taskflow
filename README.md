@@ -247,3 +247,6 @@ Le but est d'avancer **et** de comprendre. Si vous êtes bloqué plus de 15 minu
 
 > Copier n'est pas tricher si vous comprenez ce que vous copiez : en entreprise, on part très souvent d'un fichier
 > existant. Le formateur vous posera des questions sur chaque ligne lors de la validation.
+
+<!-- README.md : badge qui affiche l'état du dernier run sur main -->
+[![CI](https://github.com/Fredf59221/taskflow/actions/workflows/ci.yml/badge.svg)](https://github.com/Fredf59221/taskflow/actions)
