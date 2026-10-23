@@ -18,7 +18,7 @@ services:
       retries: 15
 
   api:
-    image: docker pull ghcr.io/fredf59221/taskflow-api:9319441
+    image: ghcr.io/fredf59221/taskflow-api:9319441
     environment:
       # "db" = nom du service ci-dessus, résolu par le DNS du réseau
       DATABASE_URL: postgres://taskflow:taskflow@db:5432/taskflow
@@ -31,7 +31,7 @@ services:
         condition: service_healthy
 
   front:
-    image: docker pull ghcr.io/fredf59221/taskflow-front:latest
+    image: ghcr.io/fredf59221/taskflow-front:latest
     environment:
       # "api" = nom du service, jamais localhost entre containers
       API_URL: http://api:3000
