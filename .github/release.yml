@@ -1,0 +1,15 @@
+name: Release
+
+on:
+  push:
+    branches: [main]                   # uniquement après un merge sur main
+
+permissions:
+  contents: read
+  packages: write                      # sans cette ligne : « denied » au push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.meta.outputs.tag }}   # exposé au job deploy de demain
