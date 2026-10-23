@@ -28,9 +28,19 @@ jobs:
 
       - uses: docker/build-push-action@v6
         with:
-          context: ./starter/api                       # dossier contenant le Dockerfile
+          context: .starter/api                       # dossier contenant le Dockerfile
           push: true                           # pousser vers le registre après le build
           build-args: APP_VERSION=${{ steps.meta.outputs.tag }}
           tags: |
             ghcr.io/${{ steps.meta.outputs.owner }}/taskflow-api:${{ steps.meta.outputs.tag }}
             ghcr.io/${{ steps.meta.outputs.owner }}/taskflow-api:latest
+
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .starter/front                      # dossier contenant le Dockerfile
+          push: true                           # pousser vers le registre après le build
+          build-args: APP_VERSION=${{ steps.meta.outputs.tag }}
+          tags: |
+            ghcr.io/${{ steps.meta.outputs.owner }}/taskflow-front:${{ steps.meta.outputs.tag }}
+            ghcr.io/${{ steps.meta.outputs.owner }}/taskflow-front:latest
