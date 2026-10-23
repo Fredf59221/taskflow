@@ -7,7 +7,7 @@ on:
 
 jobs:                                  # api et front en parallèle (+ un 3e job, voir plus loin)
 
-  front:
+ front:
     runs-on: ubuntu-latest
     defaults:
       run: { working-directory: starter/front }    # chaque `run:` s'exécute dans front/
